@@ -1,5 +1,72 @@
 # Swarming of Multiple Robots on ARGoS simulator
 
+This contains code to simulate swarming of multiple robots, which runs on [ARGoS simulator](https://github.com/ilpincy/argos3). The program was implemented by adding code to the rrepository [argos3-examples](https://github.com/ilpincy/argos3-examples). A swarm of robots forms a path from the starting point to the destination in an unknown environment. The program is based on the algorithm proposed by Nouyan et al. ([Path formation in a robot swarm](https://link.springer.com/article/10.1007/s11721-007-0009-6)).
+
+<img src="./img/footbot_argos.png" width="150"> <img src="./img/footbots_argos.png" width="300"> <img src="./img/demo_argos_large2.png" width="300">
+
+## Simulator
+To run this code, install ARGoS simulator.
+For dependencies, refer to the instruction page of the simulator.
+```
+sudo apt-get install libfreeimage-dev libfreeimageplus-dev \
+  qt5-default freeglut3-dev libxi-dev libxmu-dev liblua5.2-dev \
+  lua5.2 doxygen graphviz graphviz-dev asciidoc
+```
+It may be better to compile the source code than to use the installation package.
+```
+git clone git@github.com:ilpincy/argos3.git
+cd argos3
+mkdir build_simulator
+cd build_simulator
+cmake ../src
+make
+make doc
+sudo make install
+```
+in .bashrc
+```
+export LD_LIBRARY_PATH=$LD_LIBRARYPATH:/usr/local/lib/argos3
+```
+On the terminal,
+```
+. .bashrc
+```
+
+## Installation
+Maybe, it is necessary to install them manually.
+```
+sudo apt-get install libga-dev
+sudo apt-get install libgsl-dev
+```
+In the directory,
+```
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+make
+```
+
+## To Run It
+In the directory,
+```
+argos3 -c experiments/<argos file>
+```
+For example,
+```
+argos3 -c experiments/pathformdemo_05.argos 
+```
+
+This will run a simulation with 5 walking robots (with the start and goal robots).
+<img src="./img/demo_argos_ideal.png" width="250"> <img src="./img/demo_argos_ideal2.png" width="250"> <img src="./img/demo_argos_ideal3.png" width="250">
+
+## What I added to the existing repository?
+- controllers/footbot_path_formation
+- new argos files in the exepriments directory
+
+
+## System Diagram
+The core code is designed to be used by other simulators such as ARGoS.
+<img src="./img/prog_diagram.png" width="600">
 
 ___________________________________________________________________
 ___________________________________________________________________
