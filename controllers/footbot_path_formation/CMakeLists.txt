@@ -1,0 +1,3 @@
+add_subdirectory(footbot_explorer)
+add_subdirectory(footbot_static)
+

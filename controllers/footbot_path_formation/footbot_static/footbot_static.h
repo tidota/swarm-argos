@@ -1,0 +1,53 @@
+/*
+ * AUTHOR: Carlo Pinciroli <cpinciro@ulb.ac.be>
+ *
+ * An example synchronization controller for the foot-bot based on the
+ * synchronized oscillators of Mirollo and Strogatz. See paper at:
+ * http://www.math.pitt.edu/~bard/classes/mth3380/syncpapers/Mirollo-Strogatz.pdf
+ *
+ * The experiment reproduces the synchronization mechanisms presented by
+ * Mirollo and Strogatz in their paper.
+ * The robots initially flash their LEDs out of synchrony. Using the
+ * camera, they can perceive if other robots around have flashed their
+ * LEDs. Read the paper for more information about the details.
+ *
+ * This controller is meant to be used with the configuration file:
+ *    experiments/synchronization.argos
+ */
+
+/*
+ * 160310
+ * modified for nest/prey
+ */
+
+#ifndef FOOTBOT_NEST_H
+#define FOOTBOT_NEST_H
+
+/*
+ * Include some necessary headers.
+ */
+/* Definition of the CCI_Controller class. */
+#include <argos3/core/control_interface/ci_controller.h>
+/* Definition of the LEDs actuator */
+#include <argos3/plugins/robots/generic/control_interface/ci_leds_actuator.h>
+
+
+using namespace argos;
+
+class CFootBotNest : public CCI_Controller {
+
+public:
+
+   CFootBotNest();
+   virtual ~CFootBotNest() {}
+
+   virtual void Init(TConfigurationNode& t_node);
+   virtual void Destroy() {}
+
+private:
+
+   /* Pointer to the LEDs actuator */
+   CCI_LEDsActuator* m_pcLEDs;
+};
+
+#endif
