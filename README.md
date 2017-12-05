@@ -66,7 +66,6 @@ This will run a simulation with 5 walking robots (with the start and goal robots
 
 
 ## System Diagram
-The core code is designed to be used by other simulators such as ARGoS.
 <img src="./img/prog_diagram.png" width="600">
 
 ___________________________________________________________________
