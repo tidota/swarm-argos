@@ -2,7 +2,7 @@
 
 This contains code to simulate swarming of multiple robots, which runs on [ARGoS simulator](https://github.com/ilpincy/argos3). The program was implemented by adding code to the rrepository [argos3-examples](https://github.com/ilpincy/argos3-examples). A swarm of robots forms a path from the starting point to the destination in an unknown environment. The program is based on the algorithm proposed by Nouyan et al. ([Path formation in a robot swarm](https://link.springer.com/article/10.1007/s11721-007-0009-6)).
 
-<img src="./img/footbot_argos.png" width="150"> <img src="./img/footbots_argos.png" width="300"> <img src="./img/demo_argos_large2.png" width="300">
+<img src="./img/footbot_argos.png" width="300"> <img src="./img/footbots_argos.png" width="300"> <img src="./img/demo_argos_large.png" width="300">
 
 ## Simulator
 To run this code, install ARGoS simulator.
@@ -57,6 +57,7 @@ argos3 -c experiments/pathformdemo_05.argos
 ```
 
 This will run a simulation with 5 walking robots (with the start and goal robots).
+
 <img src="./img/demo_argos_ideal.png" width="250"> <img src="./img/demo_argos_ideal2.png" width="250"> <img src="./img/demo_argos_ideal3.png" width="250">
 
 ## What I added to the existing repository?
