@@ -25,7 +25,7 @@ sudo make install
 ```
 in .bashrc
 ```
-export LD_LIBRARY_PATH=$LD_LIBRARYPATH:/usr/local/lib/argos3
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/argos3
 ```
 On the terminal,
 ```
